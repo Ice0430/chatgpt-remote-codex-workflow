@@ -1,0 +1,17 @@
+{
+  "run_id": "20260101-120000",
+  "started_at": "2026-01-01T12:00:00+00:00",
+  "finished_at": "2026-01-01T12:00:20+00:00",
+  "project_path": "D:\\Projects\\ExampleProject",
+  "prompt_file": "prompt.md",
+  "model": "<EXPLICIT_MODEL>",
+  "reasoning_effort": "medium",
+  "codex_version": "<VERSION>",
+  "exit_code": 0,
+  "mode": "auditable-direct-cli",
+  "git": {
+    "branch": "main",
+    "head_before": "<SHA_BEFORE>",
+    "head_after": "<SHA_AFTER>"
+  }
+}

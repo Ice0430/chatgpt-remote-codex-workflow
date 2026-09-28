@@ -13,6 +13,39 @@
 3. **Auditable Direct CLI Mode**：使用者明確授權時，ChatGPT 可直接啟動 Codex CLI，但每次都必須鎖定模型／thinking effort，並留下完整 run 紀錄。
 
 這不是 Blender 專用流程，可套用程式、CAD、資料分析、文件、研究、自動化、QA、部署等任何本機 Agent 專案。
+
+## 5 分鐘快速開始
+
+1. 工作電腦先安裝 Node.js 18+。
+2. 啟動 Remote Desktop Commander：
+   ```powershell
+   npx @wonderwhy-er/desktop-commander@latest remote
+   ```
+3. 在瀏覽器完成裝置配對，並保持 remote process 持續執行。
+4. 在 ChatGPT 連接 Remote Desktop Commander。
+5. 先用測試資料夾驗證：列出檔案 → 建立文字檔 → 再讀回。
+6. 第一個正式任務先使用 **Manual App Mode**。
+7. Codex 完成後，只要回 ChatGPT：「Codex 做完了。」
+8. ChatGPT 進入 **Review-only Remote Mode**，直接驗收真實專案成果。
+
+完整安裝步驟見 [QUICKSTART.md](QUICKSTART.md)。
+
+## 架構
+
+```mermaid
+flowchart TD
+    U[使用者] --> C[ChatGPT<br/>規劃 / 審查 / Orchestrate]
+    C -->|Manual App Mode| X[Codex App]
+    C -->|明確授權| CLI[Codex CLI<br/>Auditable Direct Mode]
+    X --> P[專案成果]
+    CLI --> P
+    P --> R[Remote Desktop Commander]
+    R --> C
+    C -->|下一輪指令| U
+```
+
+重點：**審查成果，不等於自動再啟動一次 Codex。**
+
 ## 建議的預設工作流
 
 ```text
@@ -87,4 +120,5 @@ CLI 沒有 Codex App 對話畫面，不代表沒有紀錄；真正可靠的做�
 - [QUICKSTART.md](QUICKSTART.md)
 - [docs/codex-workflow.md](docs/codex-workflow.md)
 - [docs/auditable-cli.md](docs/auditable-cli.md)
+- [去識別化範例 run](examples/sample-run/README.md)
 - [skill/SKILL.md](skill/SKILL.md)

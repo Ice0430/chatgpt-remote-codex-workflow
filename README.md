@@ -11,6 +11,39 @@ This workflow supports three modes:
 3. **Auditable Direct CLI Mode** — when explicitly authorized, ChatGPT may launch Codex CLI directly, but only with an explicit model/effort and a persistent run record.
 
 This is not a Blender-specific workflow. It applies to coding, CAD, data, documents, research tooling, automation, QA, deployment, and other local-agent projects.
+
+## 5-minute quick start
+
+1. Install Node.js 18+ on the workstation.
+2. Start Remote Desktop Commander:
+   ```powershell
+   npx @wonderwhy-er/desktop-commander@latest remote
+   ```
+3. Complete browser pairing and keep the remote process running.
+4. Connect Remote Desktop Commander in ChatGPT.
+5. Test with a harmless folder: list → create text file → read it back.
+6. Use **Manual App Mode** for the first real task.
+7. When Codex finishes, tell ChatGPT: **"Codex finished."**
+8. ChatGPT switches to **Review-only Remote Mode** and inspects the actual project outputs.
+
+For setup details, see [QUICKSTART.md](QUICKSTART.md).
+
+## Architecture
+
+```mermaid
+flowchart TD
+    U[User] --> C[ChatGPT<br/>Plan / Review / Orchestrate]
+    C -->|Manual App Mode| X[Codex App]
+    C -->|Explicit authorization| CLI[Codex CLI<br/>Auditable Direct Mode]
+    X --> P[Project Artifacts]
+    CLI --> P
+    P --> R[Remote Desktop Commander]
+    R --> C
+    C -->|Next prompt| U
+```
+
+The important separation is: **review does not automatically trigger another Codex run**.
+
 ## Recommended default loop
 
 ```text
@@ -119,4 +152,5 @@ This keeps the project understandable even when an execution happened outside th
 - [docs/output-contract.md](docs/output-contract.md)
 - [SECURITY.md](SECURITY.md)
 - [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
+- [Sanitized example run](examples/sample-run/README.md)
 - [skill/SKILL.md](skill/SKILL.md)

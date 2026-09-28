@@ -2,6 +2,7 @@
 .env
 .env.*
 *.log
+agent-runs/
 tmp/
 temp/
 secrets/
@@ -18,3 +19,7 @@ Thumbs.db
 *.blend
 *.step
 *.stp
+
+# Keep the sanitized documentation example
+!examples/sample-run/agent-runs/
+!examples/sample-run/agent-runs/**
