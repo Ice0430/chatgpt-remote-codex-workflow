@@ -1,0 +1,20 @@
+# Local/private
+.env
+.env.*
+*.log
+tmp/
+temp/
+secrets/
+private/
+credentials/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Example safety
+*.blend
+*.step
+*.stp

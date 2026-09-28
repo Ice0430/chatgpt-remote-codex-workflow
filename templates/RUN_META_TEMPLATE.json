@@ -1,0 +1,18 @@
+{
+  "run_id": "",
+  "started_at": "",
+  "finished_at": "",
+  "project_path": "D:\\Projects\\ExampleProject",
+  "prompt_file": "",
+  "model": "",
+  "reasoning_effort": "",
+  "codex_version": "",
+  "exit_code": null,
+  "git": {
+    "branch": "",
+    "head_before": "",
+    "head_after": ""
+  },
+  "mode": "auditable-direct-cli",
+  "notes": ""
+}

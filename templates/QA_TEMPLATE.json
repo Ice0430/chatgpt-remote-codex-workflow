@@ -1,0 +1,16 @@
+{
+  "status": "pass|fail|partial",
+  "run_id": "",
+  "input_artifact": "",
+  "output_artifact": "",
+  "checks": [
+    {
+      "name": "",
+      "result": "pass|fail",
+      "evidence": ""
+    }
+  ],
+  "protected_scope_unchanged": null,
+  "unresolved_items": [],
+  "notes": ""
+}
